@@ -1,24 +1,24 @@
-//https://www.codewars.com/kata/5513795bd3fafb56c200049e
+//https://www.codewars.com/kata/514b92a657cdc65150000006/train/cpp
 
 #include <iostream>
 #include <vector>
 using namespace std;
 
-vector<int> countBy(int x, int n) {
-	vector<int> results;
-	int add = 0;
-	for (int i = 1; i <= n; i++) {
-		results.push_back(x + add);
-		add += x;
+int solution(int num) {
+	int sum = 0;
+
+	for (int i = 3; i < num; i++) {
+		if (i % 3 == 0 || i % 5 == 0) {
+			sum += i;
+		}
 	}
-	return results;
+
+	return sum;
 }
 
 int main() {
-	vector<int> result = countBy(10,20);
+	int result = solution(10);
 	
-	for (int i = 0; i < 20; i++) {
-		cout << result[i] << endl;
-	}
+	cout << result;
 }
 
